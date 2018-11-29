@@ -28,6 +28,11 @@ namespace CRP.Entities
 
     public void TransferItem(GearItem item, GearCarrier newCarrier)
     {
+      if (Location != newCarrier.Location)
+      {
+        return;
+      }
+
       _gearAssignmentRegistry.Transfer(
         item,
         this,

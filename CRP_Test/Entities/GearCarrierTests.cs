@@ -11,6 +11,19 @@ namespace CRP_Test.Entities
   public class GearCarrierTests
   {
     [Test]
+    public void Constructor_GivenNothing_ShouldHaveNullLocation()
+    {
+      // Arrange.
+      var gearRegistry = Substitute.For<IGearAssignmentRegistry>();
+
+      // Act.
+      var testObject = new GearCarrier(0, "C1", gearRegistry);
+
+      // Assert.
+      Assert.IsNull(testObject.Location);
+    }
+
+    [Test]
     public void AssignItem_GivenItem_ShouldAssignToSelf()
     {
       // Arrange.
@@ -44,16 +57,26 @@ namespace CRP_Test.Entities
     }
 
     [Test]
-    public void Constructor_GivenNothing_ShouldHaveNullLocation()
+    public void TransferItem_GivenDifferentLocations_ShouldNotTransferTheItem()
     {
       // Arrange.
       var gearRegistry = Substitute.For<IGearAssignmentRegistry>();
+      var gearItem = new GearItem(0, "I1");
+      var originalCarrier = new GearCarrier(0, "C1", gearRegistry);
+      var newCarrier = new GearCarrier(0, "C2", gearRegistry);
+      var location1 = new Location(0, "L1");
+      var location2 = new Location(1, "L2");
+
+      originalCarrier.AssignItem(gearItem);
+      originalCarrier.ChangeLocation(location1);
+
+      newCarrier.ChangeLocation(location2);
 
       // Act.
-      var testObject = new GearCarrier(0, "C1", gearRegistry);
+      originalCarrier.TransferItem(gearItem, newCarrier);
 
       // Assert.
-      Assert.IsNull(testObject.Location);
+      gearRegistry.Received(0).Transfer(gearItem, originalCarrier, newCarrier);
     }
 
     [Test]
