@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\ClimbSimulation.cs" />
     <Compile Include="Entities\GearCarrier.cs" />
     <Compile Include="Entities\Location.cs" />
     <Compile Include="Entities\GearItem.cs" />
