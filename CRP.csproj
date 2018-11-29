@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\GearHolder.cs" />
+    <Compile Include="Entities\GearCarrier.cs" />
     <Compile Include="Entities\Location.cs" />
     <Compile Include="Entities\GearItem.cs" />
     <Compile Include="Logic\AssignmentRegistry.cs" />

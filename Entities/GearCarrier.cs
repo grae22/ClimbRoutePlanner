@@ -1,11 +1,11 @@
 ﻿namespace CRP.Entities
 {
-  internal class GearHolder
+  internal class GearCarrier
   {
     public int Id { get; }
     public string Name { get; }
 
-    public GearHolder(
+    public GearCarrier(
       in int id,
       in string name)
     {

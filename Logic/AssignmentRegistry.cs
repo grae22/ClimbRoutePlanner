@@ -5,29 +5,29 @@ namespace CRP.Logic
 {
   internal class AssignmentRegistry<TAssignedItem, TAssignee>
   {
-    public IReadOnlyDictionary<TAssignedItem, TAssignee> HoldersByItem => _holdersByItem;
+    public IReadOnlyDictionary<TAssignedItem, TAssignee> AssigneesByItem => _assigneesByItem;
 
-    private readonly Dictionary<TAssignedItem, TAssignee> _holdersByItem = new Dictionary<TAssignedItem, TAssignee>();
+    private readonly Dictionary<TAssignedItem, TAssignee> _assigneesByItem = new Dictionary<TAssignedItem, TAssignee>();
 
-    public void Assign(TAssignedItem gearItem, TAssignee newHolder)
+    public void Assign(TAssignedItem gearItem, TAssignee newAssignee)
     {
       if (gearItem == null)
       {
         throw new ArgumentNullException(nameof(gearItem));
       }
 
-      if (newHolder == null)
+      if (newAssignee == null)
       {
-        throw new ArgumentNullException(nameof(newHolder));
+        throw new ArgumentNullException(nameof(newAssignee));
       }
 
-      if (!_holdersByItem.ContainsKey(gearItem))
+      if (!_assigneesByItem.ContainsKey(gearItem))
       {
-        _holdersByItem.Add(gearItem, newHolder);
+        _assigneesByItem.Add(gearItem, newAssignee);
         return;
       }
 
-      _holdersByItem[gearItem] = newHolder;
+      _assigneesByItem[gearItem] = newAssignee;
     }
   }
 }

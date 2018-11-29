@@ -9,36 +9,36 @@ namespace CRP_Test.Logic
   public class AssignmentRegistryTests
   {
     [Test]
-    public void Assign_GivenNoCurrentHolder_ShouldAssignToSpecifiedHolder()
+    public void Assign_GivenNoCurrentCarrier_ShouldAssignToSpecifiedCarrier()
     {
       // Arrange.
-      var testObject = new AssignmentRegistry<GearItem, GearHolder>();
+      var testObject = new AssignmentRegistry<GearItem, GearCarrier>();
       var gearItem = new GearItem(0, "Item1");
-      var newHolder = new GearHolder(0, "Holder1");
+      var newCarrier = new GearCarrier(0, "Carrier1");
 
       // Act.
-      testObject.Assign(gearItem, newHolder);
+      testObject.Assign(gearItem, newCarrier);
 
       // Assert.
-      Assert.AreSame(newHolder, testObject.HoldersByItem[gearItem]);
+      Assert.AreSame(newCarrier, testObject.AssigneesByItem[gearItem]);
     }
 
     [Test]
-    public void Assign_GivenCurrentHolder_ShouldAssignToNewHolder()
+    public void Assign_GivenCurrentCarrier_ShouldAssignToNewCarrier()
     {
       // Arrange.
-      var testObject = new AssignmentRegistry<GearItem, GearHolder>();
+      var testObject = new AssignmentRegistry<GearItem, GearCarrier>();
       var gearItem = new GearItem(0, "Item1");
-      var oldHolder = new GearHolder(0, "Holder1");
-      var newHolder = new GearHolder(0, "Holder2");
+      var oldCarrier = new GearCarrier(0, "Carrier1");
+      var newCarrier = new GearCarrier(0, "Carrier2");
 
-      testObject.Assign(gearItem, oldHolder);
+      testObject.Assign(gearItem, oldCarrier);
 
       // Act.
-      testObject.Assign(gearItem, newHolder);
+      testObject.Assign(gearItem, newCarrier);
 
       // Assert.
-      Assert.AreSame(newHolder, testObject.HoldersByItem[gearItem]);
+      Assert.AreSame(newCarrier, testObject.AssigneesByItem[gearItem]);
     }
   }
 }

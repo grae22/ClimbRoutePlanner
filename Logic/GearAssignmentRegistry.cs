@@ -2,7 +2,7 @@
 
 namespace CRP.Logic
 {
-  internal class GearAssignmentRegistry : AssignmentRegistry<GearItem, GearHolder>
+  internal class GearAssignmentRegistry : AssignmentRegistry<GearItem, GearCarrier>
   {
   }
 }
