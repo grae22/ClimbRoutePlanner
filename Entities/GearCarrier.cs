@@ -6,6 +6,7 @@ namespace CRP.Entities
   {
     public int Id { get; }
     public string Name { get; }
+    public Location Location { get; private set; }
 
     private readonly IGearAssignmentRegistry _gearAssignmentRegistry;
 
@@ -31,6 +32,11 @@ namespace CRP.Entities
         item,
         this,
         newCarrier);
+    }
+
+    public void ChangeLocation(in Location location)
+    {
+      Location = location;
     }
   }
 }
