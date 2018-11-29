@@ -21,6 +21,11 @@ namespace CRP.Entities
       _gearAssignmentRegistry = gearAssignmentRegistry;
     }
 
+    public override string ToString()
+    {
+      return $"Id=\"{Id}\",Name=\"{Name}\"";
+    }
+
     public void AssignItem(GearItem item)
     {
       _gearAssignmentRegistry.Assign(item, this);
