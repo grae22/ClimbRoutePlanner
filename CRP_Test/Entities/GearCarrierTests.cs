@@ -1,6 +1,8 @@
 ﻿using CRP.Entities;
 using CRP.Interfaces;
+
 using NSubstitute;
+
 using NUnit.Framework;
 
 namespace CRP_Test.Entities
