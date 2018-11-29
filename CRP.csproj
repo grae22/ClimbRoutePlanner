@@ -48,6 +48,8 @@
     <Compile Include="Entities\GearCarrier.cs" />
     <Compile Include="Entities\Location.cs" />
     <Compile Include="Entities\GearItem.cs" />
+    <Compile Include="Exceptions\AssignmentRegistryException.cs" />
+    <Compile Include="Interfaces\IGearAssignmentRegistry.cs" />
     <Compile Include="Logic\AssignmentRegistry.cs" />
     <Compile Include="Logic\GearAssignmentRegistry.cs" />
     <Compile Include="Program.cs" />

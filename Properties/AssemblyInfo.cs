@@ -37,3 +37,4 @@ using System.Runtime.InteropServices;
 
 // Unit testing.
 [assembly: InternalsVisibleTo("CRP_Test")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
