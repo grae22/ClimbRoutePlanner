@@ -14,8 +14,8 @@ namespace CRP_Test.Logic
     {
       // Arrange.
       var testObject = new GearAssignmentRegistry();
-      var carrier1 = new GearCarrier(0, "C1", testObject);
-      var carrier2 = new GearCarrier(1, "C2", testObject);
+      var carrier1 = new GearCarrier(0, "C1", null, testObject);
+      var carrier2 = new GearCarrier(1, "C2", null, testObject);
       var item = new GearItem(0, "I1");
       var location1 = new Location(0, "L1");
       var location2 = new Location(1, "L2");
@@ -38,14 +38,14 @@ namespace CRP_Test.Logic
 
       Assert.Fail();
     }
-    
+
     [Test]
     public void Transfer_GivenCarriersSameDifferentLocations_ShouldTransferItem()
     {
       // Arrange.
       var testObject = new GearAssignmentRegistry();
-      var carrier1 = new GearCarrier(0, "C1", testObject);
-      var carrier2 = new GearCarrier(1, "C2", testObject);
+      var carrier1 = new GearCarrier(0, "C1", null, testObject);
+      var carrier2 = new GearCarrier(1, "C2", null, testObject);
       var item = new GearItem(0, "I1");
       var location = new Location(0, "L1");
 

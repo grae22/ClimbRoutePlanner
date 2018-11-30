@@ -9,8 +9,8 @@ namespace CRP
     {
       var simulation = new ClimbSimulation();
       var gearAssignmentRegistry = new GearAssignmentRegistry();
-      var climber1 = new GearCarrier(0, "Climber1", gearAssignmentRegistry);
-      var climber2 = new GearCarrier(1, "Climber2", gearAssignmentRegistry);
+      var climber1 = new GearCarrier(0, "Climber1", null, gearAssignmentRegistry);
+      var climber2 = new GearCarrier(1, "Climber2", null, gearAssignmentRegistry);
       var draw1 = new GearItem(0, "Draw1");
       var draw2 = new GearItem(1, "Draw2");
       var draw3 = new GearItem(2, "Draw3");
@@ -21,19 +21,13 @@ namespace CRP
       var stance1 = new Location(2, "Stance1");
       var pitch2 = new Location(3, "Pitch2");
       var stance2 = new Location(4, "Stance2");
-      var boltsPitch1 = new GearCarrier(10, "BoltsPitch1", gearAssignmentRegistry);
-      var boltsPitch2 = new GearCarrier(11, "BoltsPitch2", gearAssignmentRegistry);
-      var anchorsStance1 = new GearCarrier(20, "AnchorsPitch1", gearAssignmentRegistry);
-      var anchorsStance2 = new GearCarrier(21, "AnchorsPitch2", gearAssignmentRegistry);
+      var boltsPitch1 = new GearCarrier(10, "BoltsPitch1", pitch1, gearAssignmentRegistry);
+      var boltsPitch2 = new GearCarrier(11, "BoltsPitch2", pitch2, gearAssignmentRegistry);
+      var anchorsStance1 = new GearCarrier(20, "AnchorsPitch1", stance1, gearAssignmentRegistry);
+      var anchorsStance2 = new GearCarrier(21, "AnchorsPitch2", stance2, gearAssignmentRegistry);
 
       climber1.ChangeLocation(ground);
       climber2.ChangeLocation(ground);
-
-      boltsPitch1.ChangeLocation(pitch1);
-      boltsPitch2.ChangeLocation(pitch2);
-
-      anchorsStance1.ChangeLocation(stance1);
-      anchorsStance2.ChangeLocation(stance2);
 
       climber1.AssignItem(draw1);
       climber1.AssignItem(draw2);

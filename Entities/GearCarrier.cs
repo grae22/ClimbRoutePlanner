@@ -13,11 +13,13 @@ namespace CRP.Entities
     public GearCarrier(
       in int id,
       in string name,
+      in Location location,
       in IGearAssignmentRegistry gearAssignmentRegistry)
     {
       Id = id;
       Name = name;
-      
+      Location = location;
+
       _gearAssignmentRegistry = gearAssignmentRegistry;
     }
 

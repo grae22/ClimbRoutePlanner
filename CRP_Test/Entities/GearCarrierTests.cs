@@ -17,7 +17,7 @@ namespace CRP_Test.Entities
       var gearRegistry = Substitute.For<IGearAssignmentRegistry>();
 
       // Act.
-      var testObject = new GearCarrier(0, "C1", gearRegistry);
+      var testObject = new GearCarrier(0, "C1", null, gearRegistry);
 
       // Assert.
       Assert.IsNull(testObject.Location);
@@ -29,7 +29,7 @@ namespace CRP_Test.Entities
       // Arrange.
       var gearItem = new GearItem(0, "I1");
       var gearRegistry = Substitute.For<IGearAssignmentRegistry>();
-      var testObject = new GearCarrier(0, "C1", gearRegistry);
+      var testObject = new GearCarrier(0, "C1", null, gearRegistry);
 
       // Act.
       testObject.AssignItem(gearItem);
@@ -44,8 +44,8 @@ namespace CRP_Test.Entities
       // Arrange.
       var gearRegistry = Substitute.For<IGearAssignmentRegistry>();
       var gearItem = new GearItem(0, "I1");
-      var originalCarrier = new GearCarrier(0, "C1", gearRegistry);
-      var newCarrier = new GearCarrier(0, "C2", gearRegistry);
+      var originalCarrier = new GearCarrier(0, "C1", null, gearRegistry);
+      var newCarrier = new GearCarrier(0, "C2", null, gearRegistry);
 
       originalCarrier.AssignItem(gearItem);
 
@@ -61,7 +61,7 @@ namespace CRP_Test.Entities
     {
       // Arrange.
       var gearRegistry = Substitute.For<IGearAssignmentRegistry>();
-      var testObject = new GearCarrier(0, "C1", gearRegistry);
+      var testObject = new GearCarrier(0, "C1", null, gearRegistry);
       var newLocation = new Location(0, "L1");
 
       // Act.
