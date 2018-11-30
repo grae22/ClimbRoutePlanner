@@ -25,7 +25,7 @@ namespace CRP
       var boltsPitch2 = new GearCarrier(11, "BoltsPitch2", gearAssignmentRegistry);
       var anchorsStance1 = new GearCarrier(20, "AnchorsPitch1", gearAssignmentRegistry);
       var anchorsStance2 = new GearCarrier(21, "AnchorsPitch2", gearAssignmentRegistry);
-      
+
       climber1.ChangeLocation(ground);
       climber2.ChangeLocation(ground);
 

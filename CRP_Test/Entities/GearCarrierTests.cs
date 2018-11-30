@@ -55,30 +55,7 @@ namespace CRP_Test.Entities
       // Assert.
       gearRegistry.Received().Transfer(gearItem, originalCarrier, newCarrier);
     }
-
-    [Test]
-    public void TransferItem_GivenDifferentLocations_ShouldNotTransferTheItem()
-    {
-      // Arrange.
-      var gearRegistry = Substitute.For<IGearAssignmentRegistry>();
-      var gearItem = new GearItem(0, "I1");
-      var originalCarrier = new GearCarrier(0, "C1", gearRegistry);
-      var newCarrier = new GearCarrier(0, "C2", gearRegistry);
-      var location1 = new Location(0, "L1");
-      var location2 = new Location(1, "L2");
-
-      originalCarrier.AssignItem(gearItem);
-      originalCarrier.ChangeLocation(location1);
-
-      newCarrier.ChangeLocation(location2);
-
-      // Act.
-      originalCarrier.TransferItem(gearItem, newCarrier);
-
-      // Assert.
-      gearRegistry.Received(0).Transfer(gearItem, originalCarrier, newCarrier);
-    }
-
+    
     [Test]
     public void ChangeLocation_GivenNewLocation_ShouldUpdateLocation()
     {

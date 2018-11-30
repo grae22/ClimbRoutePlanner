@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
 using CRP.Entities;
+using CRP.Exceptions;
 using CRP.Interfaces;
 
 namespace CRP.Logic
@@ -21,6 +22,12 @@ namespace CRP.Logic
       in GearCarrier sourceCarrier,
       in GearCarrier destinationCarrier)
     {
+      if (sourceCarrier.Location != destinationCarrier.Location)
+      {
+        throw new AssignmentRegistryException(
+          $"Failed to transfer item as source and destination carriers are not at the same location. [Item=\"{item}\",Source=\"{sourceCarrier}\",Destination=\"{destinationCarrier}\"]");
+      }
+
       _assignmentRegistry.Transfer(
         item,
         sourceCarrier,

@@ -33,12 +33,6 @@ namespace CRP.Entities
 
     public void TransferItem(GearItem item, GearCarrier newCarrier)
     {
-      // TODO: Move this into the GearAssignmentRegistry & raise exception?
-      if (Location != newCarrier.Location)
-      {
-        return;
-      }
-
       _gearAssignmentRegistry.Transfer(
         item,
         this,

@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Entities\GearCarrierTests.cs" />
     <Compile Include="Logic\AssignmentRegistryTests.cs" />
+    <Compile Include="Logic\GearAssignmentRegistryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
