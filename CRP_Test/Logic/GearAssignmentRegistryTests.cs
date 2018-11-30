@@ -38,5 +38,27 @@ namespace CRP_Test.Logic
 
       Assert.Fail();
     }
+    
+    [Test]
+    public void Transfer_GivenCarriersSameDifferentLocations_ShouldTransferItem()
+    {
+      // Arrange.
+      var testObject = new GearAssignmentRegistry();
+      var carrier1 = new GearCarrier(0, "C1", testObject);
+      var carrier2 = new GearCarrier(1, "C2", testObject);
+      var item = new GearItem(0, "I1");
+      var location = new Location(0, "L1");
+
+      carrier1.AssignItem(item);
+
+      carrier1.ChangeLocation(location);
+      carrier2.ChangeLocation(location);
+
+      // Act.
+      carrier1.TransferItem(item, carrier2);
+
+      // Assert.
+      Assert.AreSame(carrier2, testObject.AssigneesByItem[item]);
+    }
   }
 }
